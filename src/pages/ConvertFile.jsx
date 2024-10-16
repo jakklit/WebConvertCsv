@@ -25,6 +25,7 @@ function ConvertFile() {
             });
 
             if (response.ok) {
+                console.log('downloading...')
                 const result = await response.blob();
 
                 let filename = '';
@@ -43,6 +44,7 @@ function ConvertFile() {
                 a.href = url;
                 a.download = filename;
                 a.click();
+                console.log('Downloaded');
             } else {
                 console.error('Upload failed');
             }
